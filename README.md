@@ -1,2 +1,3 @@
-# Hamilton
-Proyecto Mecánica Analítica II
+# Hamilton Phytonism
+### Proyecto Mecánica Analítica II
+#### Alejandro Celis
