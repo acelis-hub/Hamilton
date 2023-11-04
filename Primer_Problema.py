@@ -1,7 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-from matplotlib import pyplot
 from matplotlib.animation import FuncAnimation
 
 # ecuaciones diferenciales de primer orden
@@ -34,21 +32,36 @@ def metodo_euler(th0, w0, l, u, g, tiempo):
 
 # Definición secuencia de tiempo explicito
 
-tiempo_explicito = np.linspace(0,50,1000000) # duración de 50 seg, un millon de datos
+tiempo_explicito = np.linspace(0,50,1000) # duración de 50 seg, un millon de datos
 
 ## Parametros
-th0 = np.pi / 8 # Condición inicial para el angulo theta
+th0 = np.pi / 9 # Condición inicial para el angulo theta
 w0 = 0 # Condición inicial para la velocidad angular
 l = 10 # longitud de la cuerda
-u = 0.15 # velocidad de la cuerda
+u = 0.1 # velocidad de la cuerda
 g = 9.8 # gravedad
 
 # Aplicación metodo de Euler
 resultados_th, resultados_w = metodo_euler(th0,w0, l, u, g, tiempo_explicito)
 
-# Grafica de resultados
-plt.plot(tiempo_explicito, (180/np.pi)*resultados_th, label='theta(t)')
-plt.plot(tiempo_explicito, (180/np.pi)*resultados_w, label='w(t)')
-plt.xlabel('tiempo')
-plt.legend()
+# Crear una animación
+fig, ax = plt.subplots()
+ax.set_xlim(-12, 12) # dimenciones de la pantalla
+ax.set_ylim(-12, 12)
+line, = ax.plot([], [],lw=2) # crea la cuerda
+point, = ax.plot([], [], 'ro') # crea la bola
+
+def init():
+    line.set_data([], []) # inicializa la cuerda
+    point.set_data([],[]) # inicializa el punto
+    return line, point
+
+def update(frame):
+    x = (l-(u*tiempo_explicito[frame]))* np.sin(resultados_th[frame])
+    y = (-l + (u * tiempo_explicito[frame]))* np.cos(resultados_th[frame])
+    line.set_data([0, x], [0, y])  # actualiza la posición de la cuerda
+    point.set_data(x, y)  # actualiza la posición del punto
+    return line, point
+
+ani = FuncAnimation(fig, update, frames=len(tiempo_explicito), init_func=init, blit=True, interval=16)
 plt.show()
