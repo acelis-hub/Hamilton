@@ -49,19 +49,22 @@ fig, ax = plt.subplots()
 ax.set_xlim(-12, 12) # dimenciones de la pantalla
 ax.set_ylim(-12, 12)
 line, = ax.plot([], [],lw=2) # crea la cuerda
+techo, = ax.plot([], [], 'k:', lw=1) # crea el techo
 point, = ax.plot([], [], 'ro') # crea la bola
 
 def init():
-    line.set_data([], []) # inicializa la cuerda
+    line.set_data([],[]) # inicializa la cuerda
+    techo.set_data([],[]) # inicializa el techo
     point.set_data([],[]) # inicializa el punto
-    return line, point
+    return line, point, techo
 
 def update(frame):
     x = (l-(u*tiempo_explicito[frame]))* np.sin(resultados_th[frame])
     y = (-l + (u * tiempo_explicito[frame]))* np.cos(resultados_th[frame])
     line.set_data([0, x], [0, y])  # actualiza la posición de la cuerda
+    techo.set_data([-5,5],[0,0]) # actualiza el techo
     point.set_data(x, y)  # actualiza la posición del punto
-    return line, point
+    return line, point, techo
 
 ani = FuncAnimation(fig, update, frames=len(tiempo_explicito), init_func=init, blit=True, interval=16)
 plt.show()
