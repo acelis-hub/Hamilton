@@ -71,4 +71,5 @@ def update(frame):
     return line1, line2, point, techo
 
 ani = FuncAnimation(fig, update, frames=len(tiempo_explicito), init_func=init, blit=True, interval=16)
+ani.save('Primer_Problema.mp4', writer='ffmpeg', fps=30)
 plt.show()
