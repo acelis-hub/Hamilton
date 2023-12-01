@@ -12,19 +12,24 @@ Este repositorio alberga un proyecto libre creado como parte del curso de Mecán
 3. [Resultados](#Resultados)
 4. [Conclusiones](#Conclusiones)
 
-##Introducción:
+## Introducción:
 
 
 
-##Problemas:
+## Problemas
 
-#Primer Problema
+# Primer Problema
 Supóngase que el hilo del cual pende la masa de un péndulo simple pasa por un pequeño orificio en el soporte. Si se tira del hilo hacia arriba, a través del orificio, con una velocidad constante u en la dirección del hilo.
 
-##Conclusiones:
+# Segundo Problema
+Masa pendular suspendida de un resorte espiral a la que se le permite oscilar en un plano vertical considerando la situacion donde se desprecian efectos de fricción.
 
-*El metodo euler diverge dada la alta velocidad 
+## Resultados
+
+## Conclusiones
+
+* El metodo euler diverge dada la alta velocidad 
 que alcanza el pendulo, generando angulos fisicamente imposibles.
 
-*esto tambien puede deberse a que no hay rozamientos 
+* esto tambien puede deberse a que no hay rozamientos 
 y ademas no se especifica la posibilidad de rebote con el techo
