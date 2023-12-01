@@ -41,12 +41,14 @@ Masa pendular suspendida de un resorte espiral a la que se le permite oscilar en
 Las ecuaciones de movimiento para este problema son:
 
 $$r\ddot{\theta}+2\dot{\theta}-g\sin\theta=0$$
-$$\ddot{r}+\dfrac{k}{m}(r-a)-g\cos\theta=0$$
 
+$$\ddot{r}+\dfrac{k}{m}(r-a)-g\cos\theta=0$$
 
 ## Resultados
 
 En los archivos del repositorio se encuentran dos scripts en python, cada uno referente a un problema, en los cuales se aplicó el metodo de Euler para ecuaciones diferenciales y como resultado se tiene una simulación grafica. El script puede ejecutarse en un entorno de desarrollo como Eclipse o directamente desde una terminal si así se desea.
+
+Para el primer problema se logró una correcta simulación que representa una dinamica realista, sin embargo, para el segundo problema el metodo de Euler diverge y no se logra una simulación realista.
 
 ## Visualización
 
@@ -60,6 +62,8 @@ Para facilidad de visualización, los scprits producen un video en mp4 de la sim
 * Selecciona la opción de descarga
 
   ![Image text](tuto2.png)
+
+* Disfruta del video
 
 ## Conclusiones
 
