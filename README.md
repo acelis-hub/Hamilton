@@ -35,6 +35,8 @@ La ecuación de movimiento de este problema es:
 
 $$(l-ut)\ddot{\theta}-2u\theta+g\sin\theta=0$$
 
+![Image text](1.1.png)
+
 ### Segundo Problema
 Masa pendular suspendida de un resorte espiral a la que se le permite oscilar en un plano vertical considerando la situacion donde se desprecian efectos de fricción.
 
@@ -43,6 +45,8 @@ Las ecuaciones de movimiento para este problema son:
 $$r\ddot{\theta}+2\dot{\theta}-g\sin\theta=0$$
 
 $$\ddot{r}+\dfrac{k}{m}(r-a)-g\cos\theta=0$$
+
+![Image text](2.4.png)
 
 ## Resultados
 
@@ -55,6 +59,9 @@ Para el primer problema se logró una correcta simulación que representa una di
 Para facilidad de visualización, los scprits producen un video en mp4 de la simulación grafica, videos que pueden ser descargados desde este repositorio de la siguiente manera:
 
 * Haz clic en el video de tu preferencia.
+  
+  ![Image text](tuto3.png)
+
 * En la nueva ventana busca el boton con tres puntos y haz clic sobre él.
 
   ![Image text](tuto1.png)
